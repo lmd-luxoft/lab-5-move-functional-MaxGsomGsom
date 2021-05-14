@@ -40,8 +40,12 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChildrenMovie.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Movie.cs" />
+    <Compile Include="MovieType.cs" />
+    <Compile Include="NewReleaseMovie.cs" />
+    <Compile Include="RegularMovie.cs" />
     <Compile Include="Rental.cs" />
     <Compile Include="TestClass.cs" />
   </ItemGroup>

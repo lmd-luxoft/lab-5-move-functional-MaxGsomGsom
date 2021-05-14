@@ -1,13 +1,10 @@
-﻿// NUnit 3 tests
-// See documentation : https://github.com/nunit/docs/wiki/NUnit-Documentation
-using System;
-
-namespace MovieRental
+﻿namespace MovieRental
 {
-    internal class Rental
+    public sealed class Rental
     {
-        private Movie movie;
-        private int daysRental;
+        public Movie movie { get; }
+
+        public int daysRental { get; }
 
         public Rental(Movie movie, int daysRental)
         {
@@ -15,14 +12,8 @@ namespace MovieRental
             this.daysRental = daysRental;
         }
 
-        internal Movie getMovie()
-        {
-           return movie;
-        }
+        public int getPrice() => movie.getPrice(daysRental);
 
-        internal int getDaysRented()
-        {
-            return daysRental;
-        }
+        public int getBonusPoints() => movie.getBonusPoints(daysRental);
     }
 }

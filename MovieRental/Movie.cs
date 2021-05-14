@@ -1,38 +1,23 @@
-﻿// NUnit 3 tests
-// See documentation : https://github.com/nunit/docs/wiki/NUnit-Documentation
-using System;
-
-namespace MovieRental
+﻿namespace MovieRental
 {
-    public class Movie
+    public abstract class Movie
     {
-        private string title;
-        private Type type;
+        public string title { get; }
+        public MovieType type { get; }
 
-        public Movie(string title, Type type)
+        protected Movie(string title, MovieType type)
         {
             this.title = title;
             this.type = type;
         }
 
-        public enum Type
-        {
-            NEW_RELEASE,
-            REGULAR,
-            CHILDREN
-        }
-
-        public string getTitle()
-        {
-            return title;
-        }
-        public Type getPriceCode()
-        {
-            return type;
-        }
         public override string ToString()
         {
             return title;
         }
+
+        public abstract int getPrice(int daysRental);
+
+        public virtual int getBonusPoints(int daysRental) => 0;
     }
 }
